@@ -26,6 +26,12 @@ import Samsung from "./components/BrandsProducts/SamsungProducts/Samsung.jsx";
 import UpdateSamsung from "./components/BrandsProducts/SamsungProducts/UpdateSamsung.jsx";
 import Sony from "./components/BrandsProducts/SonyProducts/Sony.jsx";
 import UpdateSony from "./components/BrandsProducts/SonyProducts/UpdateSony.jsx";
+import AmdDetails from "./components/BrandsProducts/AmdProducts/AmdDetails.jsx";
+import AppleDetails from "./components/BrandsProducts/AppleProducts/AppleDetails.jsx";
+import GoogleDetails from "./components/BrandsProducts/GoogleProducts/GoogleDetails.jsx";
+import IntelDetails from "./components/BrandsProducts/IntelProducts/IntelDetails.jsx";
+import SamsungDetails from "./components/BrandsProducts/SamsungProducts/SamsungDetails.jsx";
+import SonyDetails from "./components/BrandsProducts/SonyProducts/SonyDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -57,9 +63,15 @@ const router = createBrowserRouter([
         element: <Amd />,
         loader: () => fetch("http://localhost:3000/amd"),
       },
+
       {
         path: "/updateAmd/:id",
         element: <UpdateAmd />,
+        loader: ({ params }) => fetch(`http://localhost:3000/amd/${params.id}`),
+      },
+      {
+        path: "/amd-product-details/:id",
+        element: <AmdDetails />,
         loader: ({ params }) => fetch(`http://localhost:3000/amd/${params.id}`),
       },
       {
@@ -74,6 +86,12 @@ const router = createBrowserRouter([
       {
         path: "/updateApple/:id",
         element: <UpdateApple />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/apple/${params.id}`),
+      },
+      {
+        path: "/apple-product-details/:id",
+        element: <AppleDetails />,
         loader: ({ params }) =>
           fetch(`http://localhost:3000/apple/${params.id}`),
       },
@@ -93,6 +111,12 @@ const router = createBrowserRouter([
           fetch(`http://localhost:3000/google/${params.id}`),
       },
       {
+        path: "/google-product-details/:id",
+        element: <GoogleDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/google/${params.id}`),
+      },
+      {
         path: "/addintel",
         element: <AddIntel />,
       },
@@ -104,6 +128,12 @@ const router = createBrowserRouter([
       {
         path: "/updateIntel/:id",
         element: <UpdateIntel />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/intel/${params.id}`),
+      },
+      {
+        path: "/intel-product-details/:id",
+        element: <IntelDetails />,
         loader: ({ params }) =>
           fetch(`http://localhost:3000/intel/${params.id}`),
       },
@@ -123,6 +153,12 @@ const router = createBrowserRouter([
           fetch(`http://localhost:3000/samsung/${params.id}`),
       },
       {
+        path: "/samsung-product-details/:id",
+        element: <SamsungDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/samsung/${params.id}`),
+      },
+      {
         path: "/addsony",
         element: <AddSony />,
       },
@@ -138,8 +174,15 @@ const router = createBrowserRouter([
           fetch(`http://localhost:3000/sony/${params.id}`),
       },
       {
+        path: "/sony-product-details/:id",
+        element: <SonyDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/sony/${params.id}`),
+      },
+      {
         path: "mycart",
         element: <MyCart />,
+        loader: () => fetch("http://localhost:3000/myCart"),
       },
     ],
   },

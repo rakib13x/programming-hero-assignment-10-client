@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const GoogleProductCard = ({ google, setGoogles, googles }) => {
   const { _id, name, quantity, supplier, taste, category, details, photo } =
     google;
-
+  const navigate = useNavigate();
+  const handleGoogleDetails = () => {
+    navigate(`/google-product-details/${google._id}`);
+  };
   const handleDelete = (_id) => {
     console.log("deleted", _id);
     Swal.fire({
@@ -50,7 +53,9 @@ const GoogleProductCard = ({ google, setGoogles, googles }) => {
         </div>
         <div className="card-actions justify-end">
           <div className="btn-group btn-group-vertical space-y-4">
-            <button className="btn btn-active">View</button>
+            <button className="btn btn-active" onClick={handleGoogleDetails}>
+              Details
+            </button>
             <Link to={`/updateGoogle/${_id}`}>
               <button className="btn">Edit</button>
             </Link>

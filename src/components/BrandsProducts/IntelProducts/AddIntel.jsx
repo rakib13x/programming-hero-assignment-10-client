@@ -30,7 +30,7 @@ const AddIntel = () => {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(newGoogle),
+      body: JSON.stringify(newIntel),
     })
       .then((res) => res.json())
       .then((data) => {

@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const AppleProductCard = ({ apple, setApples, apples }) => {
   const { _id, name, quantity, supplier, taste, category, details, photo } =
     apple;
-
+  const navigate = useNavigate();
+  const handleAppleDetails = () => {
+    navigate(`/apple-product-details/${apple._id}`);
+  };
   const handleDelete = (_id) => {
     console.log("deleted", _id);
     Swal.fire({
@@ -50,7 +53,9 @@ const AppleProductCard = ({ apple, setApples, apples }) => {
         </div>
         <div className="card-actions justify-end">
           <div className="btn-group btn-group-vertical space-y-4">
-            <button className="btn btn-active">View</button>
+            <button className="btn btn-active" onClick={handleAppleDetails}>
+              Details
+            </button>
             <Link to={`/updateApple/${_id}`}>
               <button className="btn">Edit</button>
             </Link>

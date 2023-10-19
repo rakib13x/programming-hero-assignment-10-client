@@ -1,12 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const AmdProductCard = ({ amd, setAmds, amds }) => {
   const { _id, name, quantity, supplier, taste, category, details, photo } =
     amd;
-
+  const navigate = useNavigate();
+  const handleAmdDetails = () => {
+    navigate(`/amd-product-details/${amd._id}`);
+  };
   const handleDelete = (_id) => {
-    console.log("deleted", _id);
+    console.log("Deleting item with _id:", _id);
+
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -22,17 +26,21 @@ const AmdProductCard = ({ amd, setAmds, amds }) => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            console.log("Delete response:", data);
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your file has been deleted.", "success");
-              console.log("delete Confirmed");
+              console.log("Item deleted successfully");
+
+              // Filter out the deleted item and update state
               const remaining = amds.filter((amd) => amd._id !== _id);
+              console.log("Remaining items:", remaining);
               setAmds(remaining);
             }
           });
       }
     });
   };
+
   return (
     <div className="card card-side bg-base-100 shadow-xl">
       <figure>
@@ -50,7 +58,9 @@ const AmdProductCard = ({ amd, setAmds, amds }) => {
         </div>
         <div className="card-actions justify-end">
           <div className="btn-group btn-group-vertical space-y-4">
-            <button className="btn btn-active">View</button>
+            <button className="btn btn-active" onClick={handleAmdDetails}>
+              Details
+            </button>
             <Link to={`/updateAmd/${_id}`}>
               <button className="btn">Edit</button>
             </Link>

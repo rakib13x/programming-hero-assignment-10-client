@@ -23,7 +23,7 @@ const AddApple = () => {
       details,
       photo,
     };
-    console.log(newAmd);
+    console.log(newApple);
 
     fetch("http://localhost:3000/apple", {
       method: "POST",

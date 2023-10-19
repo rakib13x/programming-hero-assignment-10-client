@@ -18,9 +18,9 @@ const Amd = () => {
         Hot Cold Coffee : {amds.length}
       </h1>
       <div className="grid md:grid-cols-2 gap-4">
-        {amds.map((amd) => (
+        {amds.map((amd, index) => (
           <AmdProductCard
-            key={amd._id}
+            key={`${amd._id}_${index}`}
             amd={amd}
             amds={amds}
             setAmds={setAmds}
