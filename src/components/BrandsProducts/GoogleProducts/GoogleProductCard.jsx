@@ -2,8 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const GoogleProductCard = ({ google, setGoogles, googles }) => {
-  const { _id, name, quantity, supplier, taste, category, details, photo } =
-    google;
+  const { _id, name, image, brand, type, price, description, rating } = google;
   const navigate = useNavigate();
   const handleGoogleDetails = () => {
     navigate(`/google-product-details/${google._id}`);
@@ -37,29 +36,32 @@ const GoogleProductCard = ({ google, setGoogles, googles }) => {
     });
   };
   return (
-    <div className="card card-side bg-base-100 shadow-xl">
-      <figure>
-        <img
-          src="/images/stock/photo-1635805737707-575885ab0820.jpg"
-          alt="Movie"
-        />
-      </figure>
-      <div className="flex justify-between w-full pr-4">
-        <h2 className="card-title">Name: {name}</h2>
-        <div>
-          <p>{supplier}</p>
-          <p>{quantity}</p>
-          <p>{taste}</p>
-        </div>
-        <div className="card-actions justify-end">
-          <div className="btn-group btn-group-vertical space-y-4">
-            <button className="btn btn-active" onClick={handleGoogleDetails}>
+    <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 justify-center ">
+      <div className="card w-96 bg-base-100 shadow-xl">
+        <figure>
+          <img src={image} alt="Product" />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title">
+            {name}
+            <div className="badge badge-secondary">NEW</div>
+          </h2>
+          <p>{description}</p>
+
+          <div className="card-actions justify-center">
+            <button
+              className="btn btn-active bg-green-600 text-white"
+              onClick={handleGoogleDetails}
+            >
               Details
             </button>
             <Link to={`/updateGoogle/${_id}`}>
-              <button className="btn">Edit</button>
+              <button className="btn bg-green-600 text-white">Edit</button>
             </Link>
-            <button className="btn" onClick={() => handleDelete(_id)}>
+            <button
+              className="btn bg-green-600 text-white"
+              onClick={() => handleDelete(_id)}
+            >
               Delete
             </button>
           </div>

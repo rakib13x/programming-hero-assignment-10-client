@@ -1,11 +1,10 @@
 const Productform = () => {
   return (
-    <div>
-      {" "}
-      <div className="md:flex gap-8">
-        <div className="form-control md:w-1/2">
+    <div className="flex items-center justify-center h-screen">
+      <div className="w-full md:w-1/2 lg:w-1/3">
+        <div className="form-control">
           <label className="label">
-            <span className="label-text">Coffee Name</span>
+            <span className="label-text">Product Name</span>
           </label>
           <label className="input-group">
             <span>Name</span>
@@ -19,103 +18,100 @@ const Productform = () => {
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Available Quantity</span>
+            <span className="label-text">Product Image</span>
           </label>
           <label className="input-group">
-            <span>Available Quantity</span>
+            <span>Image</span>
             <input
               type="text"
-              name="quantity"
-              placeholder="Available Quantity"
-              className="input input-bordered"
+              name="image"
+              placeholder="Image URL"
+              className="input input-bordered w-full"
             />
           </label>
         </div>
-      </div>
-      {/**form supplier row */}
-      <div className="md:flex gap-8">
-        <div className="form-control md:w-1/2">
+
+        <div className="form-control">
           <label className="label">
-            <span className="label-text">Supplier</span>
+            <span className="label-text">Brand Name</span>
           </label>
           <label className="input-group">
             <span>Name</span>
             <input
               type="text"
-              name="supplier"
-              placeholder="supplier name"
+              name="brand"
+              placeholder="Brand Name"
               className="input input-bordered w-full"
             />
           </label>
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Taste</span>
+            <span className="label-text">Type</span>
           </label>
           <label className="input-group">
-            <span>Taste</span>
+            <span>Brand Type</span>
             <input
               type="text"
-              name="taste"
-              placeholder="Taste"
-              className="input input-bordered"
+              name="type"
+              placeholder="Brand Type"
+              className="input input-bordered w-full"
             />
           </label>
         </div>
-      </div>
-      {/**form category and details row */}
-      <div className="md:flex gap-8">
-        <div className="form-control md:w-1/2">
+
+        <div className="form-control">
           <label className="label">
-            <span className="label-text">Category</span>
+            <span className="label-text">Product Price</span>
           </label>
           <label className="input-group">
-            <span>Name</span>
+            <span>Price</span>
             <input
               type="text"
-              name="category"
-              placeholder="Categories"
+              name="price"
+              placeholder="Price"
               className="input input-bordered w-full"
             />
           </label>
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Details</span>
+            <span className="label-text">Description</span>
           </label>
           <label className="input-group">
-            <span>Details</span>
+            <span>Description</span>
             <input
               type="text"
-              name="details"
-              placeholder="Available Quantity"
-              className="input input-bordered"
-            />
-          </label>
-        </div>
-      </div>
-      {/**photo Url */}
-      <div className="md:flex gap-8">
-        <div className="form-control w-full">
-          <label className="label">
-            <span className="label-text">PhotoUrl</span>
-          </label>
-          <label className="input-group">
-            <span>PhotoUrl</span>
-            <input
-              type="text"
-              name="photo"
-              placeholder="Categories"
+              name="description"
+              placeholder="Description"
               className="input input-bordered w-full"
             />
           </label>
         </div>
+
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Rating</span>
+          </label>
+          <label className="input-group">
+            <span>Rating</span>
+            <input
+              type="text"
+              name="rating"
+              placeholder="Rating"
+              className="input input-bordered w-full"
+            />
+          </label>
+        </div>
+
+        <div className="pt-8 flex justify-center">
+          <input
+            type="submit"
+            value="Add Product"
+            className="btn w-2/4 bg-green-700 border-none text-white hover:bg-green-200 hover:text-black"
+          />
+        </div>
       </div>
-      <input
-        type="submit"
-        value="Add Coffee"
-        className="btn btn-block bg-black text-white hover:bg-gray-500"
-      />
     </div>
   );
 };

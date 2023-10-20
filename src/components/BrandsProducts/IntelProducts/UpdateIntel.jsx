@@ -66,7 +66,9 @@ const UpdateIntel = () => {
   };
   return (
     <div className="bg-[#F4F3F0] p-24">
-      <h2 className="text-3xl font-extrabold">Update Intel:{name}</h2>
+      <h2 className="text-6xl font-semibold text-green-700 text-center">
+        Update {name}
+      </h2>
       <form onSubmit={handleUpdateIntel}>
         {/**form name and quantity row */}
         <Productform />

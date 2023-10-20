@@ -65,8 +65,10 @@ const UpdateAmd = () => {
       });
   };
   return (
-    <div className="bg-[#F4F3F0] p-24">
-      <h2 className="text-3xl font-extrabold">Update Amd:{name}</h2>
+    <div className="bg-green-200 p-24">
+      <h2 className="text-6xl font-semibold text-green-700 text-center">
+        Update Amd:{name}
+      </h2>
       <form onSubmit={handleUpdateAmd}>
         {/**form name and quantity row */}
         <Productform />

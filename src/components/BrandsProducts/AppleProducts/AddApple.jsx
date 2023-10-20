@@ -7,21 +7,21 @@ const AddApple = () => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
-    const quantity = form.quantity.value;
-    const supplier = form.supplier.value;
-    const taste = form.taste.value;
-    const category = form.category.value;
-    const details = form.details.value;
-    const photo = form.photo.value;
+    const image = form.image.value;
+    const brand = form.brand.value;
+    const type = form.type.value;
+    const price = form.price.value;
+    const description = form.description.value;
+    const rating = form.rating.value;
 
     const newApple = {
       name,
-      quantity,
-      supplier,
-      taste,
-      category,
-      details,
-      photo,
+      image,
+      brand,
+      type,
+      price,
+      description,
+      rating,
     };
     console.log(newApple);
 
@@ -49,8 +49,10 @@ const AddApple = () => {
       });
   };
   return (
-    <div className="bg-gray-400 p-24">
-      <h2 className="text-3xl font-extrabold">Add a apple Product</h2>
+    <div className="bg-green-200 p-24">
+      <h2 className="text-6xl font-semibold text-center text-green-600">
+        Add a apple Product
+      </h2>
       <form onSubmit={handleAddApple}>
         <Productform />
       </form>

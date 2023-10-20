@@ -1,5 +1,6 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { LuPlus } from "react-icons/lu";
 const AddProduct = () => {
   const navigate = useNavigate();
 
@@ -50,24 +51,72 @@ const AddProduct = () => {
       });
   };
   return (
-    <div className="bg-[#F4F3F0] p-24">
-      <h2 className="text-3xl font-extrabold">Add a Coffee</h2>
+    <div className="bg-green-100 pt-20 pb-20">
+      <h2 className="text-4xl font-semibold text-center text-green-700">
+        Add Your Product
+      </h2>
       <form onSubmit={handleAddCoffee}></form>
-      <div className="flex flex-col gap-8">
-        <button onClick={() => navigate("/addAmd")}>Add a AmdProduct</button>
+      <div className="grid lg:grid-cols-4 md:grid-cols-3 flex-col gap-8 pt-8 text-green-700">
+        <button onClick={() => navigate("/addAmd")}>
+          <div className="card card-compact w-40 bg-base-100 shadow-xl">
+            <div className="card-actions justify-center">
+              <LuPlus className="text-6xl text-center" />
+            </div>
+            <div className="card-actions justify-center text-2xl font-bold">
+              Amd
+            </div>
+          </div>
+        </button>
         <button onClick={() => navigate("/addApple")}>
-          Add a AppleProduct
+          <div className="card card-compact w-40 bg-base-100 shadow-xl">
+            <div className="card-actions justify-center">
+              <LuPlus className="text-6xl text-center" />
+            </div>
+            <div className="card-actions justify-center text-2xl font-bold">
+              Apple
+            </div>
+          </div>
         </button>
         <button onClick={() => navigate("/addGoogle")}>
-          Add a GoogleProduct
+          <div className="card card-compact w-40 bg-base-100 shadow-xl">
+            <div className="card-actions justify-center">
+              <LuPlus className="text-6xl text-center" />
+            </div>
+            <div className="card-actions justify-center text-2xl font-bold">
+              Google
+            </div>
+          </div>
         </button>
         <button onClick={() => navigate("/addIntel")}>
-          Add a IntelProduct
+          <div className="card card-compact w-40 bg-base-100 shadow-xl">
+            <div className="card-actions justify-center">
+              <LuPlus className="text-6xl text-center" />
+            </div>
+            <div className="card-actions justify-center text-2xl font-bold">
+              Intel
+            </div>
+          </div>
         </button>
         <button onClick={() => navigate("/addSamsung")}>
-          Add a SamsungProduct
+          <div className="card card-compact w-40 bg-base-100 shadow-xl">
+            <div className="card-actions justify-center">
+              <LuPlus className="text-6xl text-center" />
+            </div>
+            <div className="card-actions justify-center text-2xl font-bold">
+              Samsung
+            </div>
+          </div>
         </button>
-        <button onClick={() => navigate("/addSony")}>Add a SonyProduct</button>
+        <button onClick={() => navigate("/addSony")}>
+          <div className="card card-compact w-40 bg-base-100 shadow-xl">
+            <div className="card-actions justify-center">
+              <LuPlus className="text-6xl text-center" />
+            </div>
+            <div className="card-actions justify-center text-2xl font-bold">
+              Sony
+            </div>
+          </div>
+        </button>
       </div>
     </div>
   );

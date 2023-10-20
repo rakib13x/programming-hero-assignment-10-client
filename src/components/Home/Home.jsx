@@ -1,16 +1,29 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Hero from "../Hero/Hero";
+import ProductNameCard from "./ProductNameCard";
 
 const Home = () => {
   const navigate = useNavigate();
+
+  const handleProductClick = (brand) => {
+    navigate(`/${brand.toLowerCase()}product`);
+  };
+
+  const brands = ["Amd", "Apple", "Google", "Intel", "Samsung", "Sony"];
+
   return (
-    <div className="space-x-8">
-      <button onClick={() => navigate("/amdproduct")}>Amd</button>
-      <button onClick={() => navigate("/appleproduct")}>Apple</button>
-      <button onClick={() => navigate("/googleproduct")}>Google</button>
-      <button onClick={() => navigate("/intelproduct")}>Intel</button>
-      <button onClick={() => navigate("/samsungproduct")}>Samsung</button>
-      <button onClick={() => navigate("/sonyproduct")}>Sony</button>
+    <div className="lg:px-28 px-16">
+      <Hero />
+      <div className="grid lg:grid-cols-3 grid-cols-1 gap-8  justify-center pl-24 md:gap-10 pt-20">
+        {brands.map((brand) => (
+          <ProductNameCard
+            key={brand}
+            brand={brand}
+            onClick={() => handleProductClick(brand)}
+          />
+        ))}
+      </div>
     </div>
   );
 };
