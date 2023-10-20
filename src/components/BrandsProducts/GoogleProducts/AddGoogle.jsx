@@ -25,7 +25,7 @@ const AddGoogle = () => {
     };
     console.log(newGoogle);
 
-    fetch("http://localhost:3000/google", {
+    fetch("https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/google", {
       method: "POST",
       headers: {
         "content-type": "application/json",

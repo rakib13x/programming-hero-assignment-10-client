@@ -26,7 +26,7 @@ const AddSony = () => {
     };
     console.log(newSony);
 
-    fetch("http://localhost:3000/sony", {
+    fetch("https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/sony", {
       method: "POST",
       headers: {
         "content-type": "application/json",

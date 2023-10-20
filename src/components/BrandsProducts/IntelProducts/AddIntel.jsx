@@ -26,7 +26,7 @@ const AddIntel = () => {
     };
     console.log(newIntel);
 
-    fetch("http://localhost:3000/intel", {
+    fetch("https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/intel", {
       method: "POST",
       headers: {
         "content-type": "application/json",

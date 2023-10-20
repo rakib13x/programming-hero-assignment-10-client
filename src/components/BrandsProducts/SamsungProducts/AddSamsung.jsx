@@ -26,7 +26,7 @@ const AddSamsung = () => {
     };
     console.log(newSamsung);
 
-    fetch("http://localhost:3000/samsung", {
+    fetch("https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/samsung", {
       method: "POST",
       headers: {
         "content-type": "application/json",

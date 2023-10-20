@@ -31,7 +31,7 @@ const UpdateAmd = () => {
     };
 
     //send data to server
-    fetch(`http://localhost:3000/amd/${_id}`, {
+    fetch(`https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/amd/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

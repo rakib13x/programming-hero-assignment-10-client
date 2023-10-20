@@ -30,7 +30,7 @@ const AddProduct = () => {
     console.log(newCoffee);
 
     //send data to server
-    fetch("http://localhost:3000/coffee", {
+    fetch("https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/coffee", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -43,7 +43,7 @@ const AddProduct = () => {
         if (data.insertedId) {
           Swal.fire({
             title: "Success",
-            text: "User Added Successfully",
+            text: "Product Added Successfully",
             icon: "success",
             confirmButtonText: "Cool",
           });

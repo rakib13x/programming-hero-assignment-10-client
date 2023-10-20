@@ -31,7 +31,7 @@ const UpdateSony = () => {
     };
 
     //send data to server
-    fetch(`http://localhost:3000/sony/${_id}`, {
+    fetch(`https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/sony/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

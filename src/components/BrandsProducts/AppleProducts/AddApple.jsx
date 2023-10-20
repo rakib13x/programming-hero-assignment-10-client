@@ -26,7 +26,7 @@ const AddApple = () => {
     };
     console.log(newApple);
 
-    fetch("http://localhost:3000/apple", {
+    fetch("https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/apple", {
       method: "POST",
       headers: {
         "content-type": "application/json",

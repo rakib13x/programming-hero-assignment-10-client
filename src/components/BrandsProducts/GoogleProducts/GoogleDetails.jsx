@@ -40,7 +40,7 @@ const GoogleDetails = () => {
   const handleAddToCart = () => {
     const googleData = { ...google, type: "google" };
     console.log("Product added", google);
-    fetch("http://localhost:3000/myCart", {
+    fetch("https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/myCart", {
       method: "POST",
       headers: {
         "content-type": "application/json",

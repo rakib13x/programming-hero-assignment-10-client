@@ -12,7 +12,7 @@ const Register = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result.user);
-        Swal.fire("You have Successfully Logged In");
+        Swal.fire("You have Successfully Registered");
         navigate("/");
       })
       .catch((error) => {
@@ -53,6 +53,7 @@ const Register = () => {
       } else {
         try {
           await createUser(email, password, name, photoURL);
+          Swal.fire("You have Successfully Registered");
           window.location.reload();
         } catch (error) {
           console.error("Error registering user:", error);
@@ -153,7 +154,7 @@ const Register = () => {
               </button>
             </p>
             <p>
-              ALready have an account? Please{" "}
+              Already have an account? Please{" "}
               <Link to="/login">
                 <span className="font-bold text-black">login</span>
               </Link>{" "}

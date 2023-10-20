@@ -82,7 +82,8 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         errorElement: <ErrorPage />,
-        loader: () => fetch("http://localhost:3000/amd"),
+        loader: () =>
+          fetch("https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/amd"),
       },
 
       {
@@ -93,13 +94,19 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         errorElement: <ErrorPage />,
-        loader: ({ params }) => fetch(`http://localhost:3000/amd/${params.id}`),
+        loader: ({ params }) =>
+          fetch(
+            `https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/amd/${params.id}`
+          ),
       },
       {
         path: "/amd-product-details/:id",
         element: <AmdDetails />,
         errorElement: <ErrorPage />,
-        loader: ({ params }) => fetch(`http://localhost:3000/amd/${params.id}`),
+        loader: ({ params }) =>
+          fetch(
+            `https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/amd/${params.id}`
+          ),
       },
       {
         path: "/addapple",
@@ -114,7 +121,8 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         errorElement: <ErrorPage />,
-        loader: () => fetch("http://localhost:3000/apple"),
+        loader: () =>
+          fetch("https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/apple"),
       },
       {
         path: "/updateApple/:id",
@@ -125,7 +133,9 @@ const router = createBrowserRouter([
         ),
         errorElement: <ErrorPage />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/apple/${params.id}`),
+          fetch(
+            `https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/apple/${params.id}`
+          ),
       },
       {
         path: "/apple-product-details/:id",
@@ -136,7 +146,9 @@ const router = createBrowserRouter([
         ),
         errorElement: <ErrorPage />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/apple/${params.id}`),
+          fetch(
+            `https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/apple/${params.id}`
+          ),
       },
       {
         path: "/addgoogle",
@@ -155,7 +167,8 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         errorElement: <ErrorPage />,
-        loader: () => fetch("http://localhost:3000/google"),
+        loader: () =>
+          fetch("https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/google"),
       },
       {
         path: "/updateGoogle/:id",
@@ -166,7 +179,9 @@ const router = createBrowserRouter([
         ),
         errorElement: <ErrorPage />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/google/${params.id}`),
+          fetch(
+            `https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/google/${params.id}`
+          ),
       },
       {
         path: "/google-product-details/:id",
@@ -177,7 +192,9 @@ const router = createBrowserRouter([
         ),
         errorElement: <ErrorPage />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/google/${params.id}`),
+          fetch(
+            `https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/google/${params.id}`
+          ),
       },
       {
         path: "/addintel",
@@ -196,7 +213,8 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         errorElement: <ErrorPage />,
-        loader: () => fetch("http://localhost:3000/intel"),
+        loader: () =>
+          fetch("https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/intel"),
       },
       {
         path: "/updateIntel/:id",
@@ -207,7 +225,9 @@ const router = createBrowserRouter([
         ),
         errorElement: <ErrorPage />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/intel/${params.id}`),
+          fetch(
+            `https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/intel/${params.id}`
+          ),
       },
       {
         path: "/intel-product-details/:id",
@@ -218,7 +238,9 @@ const router = createBrowserRouter([
         ),
         errorElement: <ErrorPage />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/intel/${params.id}`),
+          fetch(
+            `https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/intel/${params.id}`
+          ),
       },
       {
         path: "/addsamsung",
@@ -237,7 +259,10 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         errorElement: <ErrorPage />,
-        loader: () => fetch("http://localhost:3000/samsung"),
+        loader: () =>
+          fetch(
+            "https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/samsung"
+          ),
       },
       {
         path: "/updateSamsung/:id",
@@ -248,7 +273,9 @@ const router = createBrowserRouter([
         ),
         errorElement: <ErrorPage />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/samsung/${params.id}`),
+          fetch(
+            `https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/samsung/${params.id}`
+          ),
       },
       {
         path: "/samsung-product-details/:id",
@@ -259,7 +286,9 @@ const router = createBrowserRouter([
         ),
         errorElement: <ErrorPage />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/samsung/${params.id}`),
+          fetch(
+            `https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/samsung/${params.id}`
+          ),
       },
       {
         path: "/addsony",
@@ -278,7 +307,8 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         errorElement: <ErrorPage />,
-        loader: () => fetch("http://localhost:3000/sony"),
+        loader: () =>
+          fetch("https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/sony"),
       },
       {
         path: "/updateSony/:id",
@@ -289,7 +319,9 @@ const router = createBrowserRouter([
         ),
         errorElement: <ErrorPage />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/sony/${params.id}`),
+          fetch(
+            `https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/sony/${params.id}`
+          ),
       },
       {
         path: "/sony-product-details/:id",
@@ -300,7 +332,9 @@ const router = createBrowserRouter([
         ),
         errorElement: <ErrorPage />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/sony/${params.id}`),
+          fetch(
+            `https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/sony/${params.id}`
+          ),
       },
       {
         path: "mycart",
@@ -310,7 +344,8 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         errorElement: <ErrorPage />,
-        loader: () => fetch("http://localhost:3000/myCart"),
+        loader: () =>
+          fetch("https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/myCart"),
       },
     ],
   },

@@ -26,7 +26,7 @@ const AddAmd = () => {
     };
     console.log(newAmd);
 
-    fetch("http://localhost:3000/amd", {
+    fetch("https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/amd", {
       method: "POST",
       headers: {
         "content-type": "application/json",

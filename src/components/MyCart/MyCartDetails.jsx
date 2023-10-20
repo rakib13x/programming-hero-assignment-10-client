@@ -13,23 +13,40 @@ const MyCartDetails = ({ product, products, setProducts }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/myCart/${_id}`, {
-          method: "DELETE",
-        })
+        // Show a loading state
+        setProducts((prevProducts) =>
+          prevProducts.map((product) =>
+            product._id === _id ? { ...product, deleting: true } : product
+          )
+        );
+
+        fetch(
+          `https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/myCart/${_id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
-              Swal.fire("Deleted!", "Your file has been deleted.", "success");
-
               // Filter out the deleted item and update state
-              const remaining = products.filter(
-                (product) => product._id !== _id
+              setProducts((prevProducts) =>
+                prevProducts.filter((product) => product._id !== _id)
               );
 
-              setProducts(remaining);
+              // Show a success message
+              Swal.fire("Success!", "Product deleted successfully.", "success");
             }
+          })
+          .catch((error) => {
+            console.error("Error deleting product: ", error);
+            // Remove the loading state in case of an error
+            setProducts((prevProducts) =>
+              prevProducts.map((product) =>
+                product._id === _id ? { ...product, deleting: false } : product
+              )
+            );
           });
-        window.location.reload();
       }
     });
   };

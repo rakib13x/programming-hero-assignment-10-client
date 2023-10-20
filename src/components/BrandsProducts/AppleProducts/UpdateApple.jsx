@@ -30,13 +30,16 @@ const UpdateApple = () => {
     };
 
     //send data to server
-    fetch(`http://localhost:3000/apple/${_id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(updatedApple),
-    })
+    fetch(
+      `https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/apple/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedApple),
+      }
+    )
       .then((res) => {
         if (!res.ok) {
           throw new Error("Network response was not ok");

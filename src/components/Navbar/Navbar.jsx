@@ -60,7 +60,19 @@ const Navbar = () => {
       })
       .catch((error) => console.log(error));
   };
-  const navBar = (
+  const navBar = user ? (
+    <>
+      <li>
+        <NavLink to="/">Home</NavLink>
+      </li>
+      <li>
+        <NavLink to="/addproduct">Add Product</NavLink>
+      </li>
+      <li>
+        <NavLink to="/mycart">My Cart</NavLink>
+      </li>
+    </>
+  ) : (
     <>
       <li>
         <NavLink to="/">Home</NavLink>
@@ -151,7 +163,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="mt-3 z-[100] p-2 shadow menu menu-sm dropdown-content rounded-box w-52 text-white text-2xl"
+              className="mt-3 z-[100] p-2 shadow menu menu-sm bg-red-500 text-white dropdown-content rounded-box w-52 text-2xl"
             >
               <li>
                 <a onClick={handleLogOut}>Logout</a>

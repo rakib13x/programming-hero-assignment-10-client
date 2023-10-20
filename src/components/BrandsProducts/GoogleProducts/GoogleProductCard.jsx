@@ -20,9 +20,12 @@ const GoogleProductCard = ({ google, setGoogles, googles }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/google/${_id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/google/${_id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);

@@ -66,6 +66,7 @@ const MyCart = () => {
                 <MyCartDetails
                   key={product._id}
                   product={product}
+                  setProducts={setProducts}
                   handleDelete={handleDelete}
                 />
               ))}

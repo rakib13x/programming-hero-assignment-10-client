@@ -30,13 +30,16 @@ const UpdateIntel = () => {
     };
 
     //send data to server
-    fetch(`http://localhost:3000/intel/${_id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(updatedIntel),
-    })
+    fetch(
+      `https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/intel/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedIntel),
+      }
+    )
       .then((res) => {
         if (!res.ok) {
           throw new Error("Network response was not ok");

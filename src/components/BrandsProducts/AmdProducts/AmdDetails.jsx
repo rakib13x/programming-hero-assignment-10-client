@@ -40,7 +40,7 @@ const AmdDetails = () => {
 
   const handleAddToCart = () => {
     const amdData = { ...amd, type: "amd" };
-    fetch("http://localhost:3000/myCart", {
+    fetch("https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/myCart", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -53,7 +53,7 @@ const AmdDetails = () => {
         if (data.insertedId) {
           Swal.fire({
             title: "Success",
-            text: "User Added Successfully",
+            text: "Product Added Successfully",
             icon: "success",
             confirmButtonText: "Cool",
           });

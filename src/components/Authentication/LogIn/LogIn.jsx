@@ -22,7 +22,12 @@ const LogIn = () => {
         navigate("/");
       })
       .catch((error) => {
-        clg(error.message);
+        console.log(error);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "wrong Information",
+        });
       });
   };
   const handleGoogleSignIn = () => {
@@ -38,7 +43,7 @@ const LogIn = () => {
   };
   return (
     <>
-      <div className="hero min-h-screen bg-gray-400">
+      <div className="hero min-h-screen bg-gray-100">
         <div className="hero-content flex-col l">
           <div className="text-center">
             <h1 className="text-5xl font-bold text-black">Login now!</h1>
@@ -88,8 +93,9 @@ const LogIn = () => {
                 <FcGoogle className="text-3xl" />
               </button>
             </p>
-            <p>
-              New to here ? Please{" "}
+            <p className="pl-2">
+              {" "}
+              new to here ? Please
               <Link to="/register" className="text-black font-bold">
                 {" "}
                 signUp

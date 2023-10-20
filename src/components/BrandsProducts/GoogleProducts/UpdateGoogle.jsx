@@ -31,13 +31,16 @@ const UpdateGoogle = () => {
     };
 
     //send data to server
-    fetch(`http://localhost:3000/google/${_id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(updatedGoogle),
-    })
+    fetch(
+      `https://server-ip4el90bd-rakib13x-gmailcom.vercel.app/google/${_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedGoogle),
+      }
+    )
       .then((res) => {
         if (!res.ok) {
           throw new Error("Network response was not ok");
