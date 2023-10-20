@@ -30,6 +30,7 @@ const AmdDetails = () => {
           name="rating-9"
           className={starClassName}
           checked={i === rating}
+          onChange={(e) => handleRatingChange(e, i)}
         />
       );
     }
@@ -91,7 +92,7 @@ const AmdDetails = () => {
               {amd.description}
             </p>
             <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 mt-6 ">
-              {amd.price}
+              {amd.price}$
             </p>
             <div className="lg:mt-11 mt-10">
               <div className="flex flex-row justify-between">

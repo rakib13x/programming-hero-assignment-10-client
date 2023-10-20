@@ -11,7 +11,7 @@ const Productform = () => {
             <input
               type="text"
               name="name"
-              placeholder="Coffee name"
+              placeholder="Product name"
               className="input input-bordered w-full"
             />
           </label>

@@ -3,7 +3,9 @@ import Swal from "sweetalert2";
 import { LuPlus } from "react-icons/lu";
 const AddProduct = () => {
   const navigate = useNavigate();
-
+  const theme = localStorage.getItem("theme");
+  console.log("Theme:", theme);
+  const textClass = theme === "dark" ? "text-white" : "";
   const handleAddCoffee = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -51,12 +53,14 @@ const AddProduct = () => {
       });
   };
   return (
-    <div className="bg-green-100 pt-20 pb-20">
-      <h2 className="text-4xl font-semibold text-center text-green-700">
+    <div className=" pt-20 pb-20 px-[120px] ">
+      <h2 className={`text-4xl font-semibold text-center  ${textClass}`}>
         Add Your Product
       </h2>
       <form onSubmit={handleAddCoffee}></form>
-      <div className="grid lg:grid-cols-4 md:grid-cols-3 flex-col gap-8 pt-8 text-green-700">
+      <div
+        className={`grid lg:grid-cols-4 md:grid-cols-3 flex-col gap-8 pt-8 justify-center${textClass}`}
+      >
         <button onClick={() => navigate("/addAmd")}>
           <div className="card card-compact w-40 bg-base-100 shadow-xl">
             <div className="card-actions justify-center">

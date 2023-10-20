@@ -12,28 +12,28 @@ const UpdateAmd = () => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
-    const quantity = form.quantity.value;
-    const supplier = form.supplier.value;
-    const taste = form.taste.value;
-    const category = form.category.value;
-    const details = form.details.value;
-    const photo = form.photo.value;
+    const image = form.image.value;
+    const brand = form.brand.value;
+    const type = form.type.value;
+    const price = form.price.value;
+    const description = form.description.value;
+    const rating = form.rating.value;
 
     const updatedAmd = {
       name,
-      quantity,
-      supplier,
-      taste,
-      category,
-      details,
-      photo,
+      image,
+      brand,
+      type,
+      price,
+      description,
+      rating,
     };
 
     //send data to server
     fetch(`http://localhost:3000/amd/${_id}`, {
       method: "PUT",
       headers: {
-        "Content-Type": "application/json",
+        "content-type": "application/json",
       },
       body: JSON.stringify(updatedAmd),
     })
