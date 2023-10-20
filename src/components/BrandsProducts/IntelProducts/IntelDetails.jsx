@@ -89,7 +89,7 @@ const IntelDetails = () => {
               {intel.description}
             </p>
             <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 mt-6 ">
-              {intel.price}
+              {intel.price}$
             </p>
             <div className="lg:mt-11 mt-10">
               <div className="flex flex-row justify-between">

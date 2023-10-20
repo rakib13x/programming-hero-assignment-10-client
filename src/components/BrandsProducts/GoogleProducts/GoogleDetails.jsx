@@ -52,7 +52,7 @@ const GoogleDetails = () => {
         if (data.insertedId) {
           Swal.fire({
             title: "Success",
-            text: "User Added Successfully",
+            text: "Product Added Successfully",
             icon: "success",
             confirmButtonText: "Cool",
           });
@@ -63,7 +63,6 @@ const GoogleDetails = () => {
     <div>
       <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4 ">
         <div className="flex justify-center items-center lg:flex-row flex-col gap-8">
-          {/* Description Div */}
           <div className="w-full sm:w-96 md:w-8/12 lg:w-6/12 flex lg:flex-row flex-col lg:gap-8 sm:gap-6 gap-4">
             <div className="w-full lg:w-8/12 bg-gray-100 flex justify-center items-center">
               <img src={google.image} alt="Product Preview" />
@@ -89,7 +88,7 @@ const GoogleDetails = () => {
               {google.description}
             </p>
             <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 mt-6 ">
-              {google.price}
+              {google.price}$
             </p>
             <div className="lg:mt-11 mt-10">
               <div className="flex flex-row justify-between">

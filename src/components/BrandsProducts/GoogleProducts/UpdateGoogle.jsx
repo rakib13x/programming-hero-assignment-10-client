@@ -12,21 +12,21 @@ const UpdateGoogle = () => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
-    const quantity = form.quantity.value;
-    const supplier = form.supplier.value;
-    const taste = form.taste.value;
-    const category = form.category.value;
-    const details = form.details.value;
-    const photo = form.photo.value;
+    const image = form.image.value;
+    const brand = form.brand.value;
+    const type = form.type.value;
+    const price = form.price.value;
+    const description = form.description.value;
+    const rating = form.rating.value;
 
     const updatedGoogle = {
       name,
-      quantity,
-      supplier,
-      taste,
-      category,
-      details,
-      photo,
+      image,
+      brand,
+      type,
+      price,
+      description,
+      rating,
     };
 
     //send data to server
@@ -48,7 +48,7 @@ const UpdateGoogle = () => {
         if (data.modifiedCount > 0) {
           Swal.fire({
             title: "Success",
-            text: "Coffee Updated Successfully",
+            text: "Product Updated Successfully",
             icon: "success",
             confirmButtonText: "Cool",
           });
@@ -58,7 +58,7 @@ const UpdateGoogle = () => {
         console.error("Fetch error:", error);
         Swal.fire({
           title: "Error",
-          text: "Failed to update coffee",
+          text: "Failed to update Product",
           icon: "error",
           confirmButtonText: "OK",
         });
@@ -70,7 +70,6 @@ const UpdateGoogle = () => {
         Update {name}
       </h2>
       <form onSubmit={handleUpdateGoogle}>
-        {/**form name and quantity row */}
         <Productform />
       </form>
     </div>

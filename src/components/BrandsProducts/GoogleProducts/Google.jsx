@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import { useState, useEffect } from "react";
 import GoogleProductCard from "./GoogleProductCard";
+import GoogleHero from "../../BrandHero/GoogleHero";
 
 const Google = () => {
   const loadedGoogles = useLoaderData();
@@ -13,11 +14,9 @@ const Google = () => {
   }, [loadedGoogles]);
 
   return (
-    <div className="m-20">
-      <h1 className="text-6xl my-20 text-center text-purple-600 ">
-        Hot Cold Coffee : {googles.length}
-      </h1>
-      <div className="grid md:grid-cols-2 gap-4">
+    <div className="rounded-xl">
+      <GoogleHero />
+      <div className="grid lg:grid-cols-3 grid-cols-1 gap-4 pt-20 px-[120px] justify-center">
         {googles.map((google) => (
           <GoogleProductCard
             key={google._id}
