@@ -56,14 +56,11 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-base-100">
-      <div className="navbar bg-base-100">
+    <div className="navbar bg-gray-300 px-[120px]">
+      <div className="navbar bg-base-300">
         <div className="navbar-start">
           <div className="dropdown">
-            <label
-              tabIndex={0}
-              className="btn btn-neutral text-white text-xl lg:hidden"
-            >
+            <label tabIndex={0} className="btn  text-black text-xl lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -88,7 +85,7 @@ const Navbar = () => {
           </div>
           <Link to="/">
             <a className="btn btn-ghost normal-case text-3xl text-black font-bold">
-              Eventy
+              E-Shop
             </a>
           </Link>
         </div>
