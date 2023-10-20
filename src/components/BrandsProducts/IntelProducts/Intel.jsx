@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import { useState, useEffect } from "react";
 import IntelProductCard from "./IntelProductCard";
+import IntelHero from "../../BrandHero/IntelHero";
 
 const Intel = () => {
   const loadedIntels = useLoaderData();
@@ -13,7 +14,8 @@ const Intel = () => {
   }, [loadedIntels]);
 
   return (
-    <div className="m-20">
+    <div className="rounded-xl">
+      <IntelHero />
       <div className="grid lg:grid-cols-3 grid-cols-1 gap-4 pt-20 px-[120px] justify-center">
         {intels.map((intel) => (
           <IntelProductCard

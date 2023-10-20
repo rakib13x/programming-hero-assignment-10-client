@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <div>
+    <div className="px-[120px]">
       <div
         className="hero h-[550px] rounded-xl object-contain"
         style={{

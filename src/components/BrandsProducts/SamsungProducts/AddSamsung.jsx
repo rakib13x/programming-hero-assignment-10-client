@@ -38,7 +38,7 @@ const AddSamsung = () => {
         if (data.insertedId) {
           Swal.fire({
             title: "Success",
-            text: "User Added Successfully",
+            text: "Product Added Successfully",
             icon: "success",
             confirmButtonText: "Cool",
           });

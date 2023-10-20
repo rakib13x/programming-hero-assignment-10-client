@@ -29,12 +29,6 @@ const Navbar = () => {
     const localTheme = localStorage.getItem("theme");
 
     document.querySelector("html").setAttribute("data-theme", localTheme);
-
-    if (localTheme === "dark") {
-      document.body.classList.add("text-white");
-    } else {
-      document.body.classList.remove("text-white");
-    }
   }, [theme]);
 
   useEffect(() => {
