@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "image":"https://i.ibb.co/88zFy9b/tv-48x48.png"
+
+    },
+    {
+        "id": 2,
+        "image":"https://i.ibb.co/P4VvC8b/mobile-phone-48x48.png"
+
+    },
+    {
+        "id": 3,
+        "image":"https://i.ibb.co/bs8GzLt/headphone-48x48.png"
+
+    },
+    {
+        "id": 4,
+        "image":"https://i.ibb.co/m4jMn59/bt-speaker-48x48.png"
+
+    },
+    {
+        "id": 5,
+        "image":"https://i.ibb.co/5TCt8Yx/earbuds-48x48.png"
+
+    },
+    {
+        "id": 6,
+        "image":"https://i.ibb.co/pXqhc9r/smart-watch-48x48.png"
+
+    }
+]

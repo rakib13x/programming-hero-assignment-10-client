@@ -32,6 +32,7 @@ import GoogleDetails from "./components/BrandsProducts/GoogleProducts/GoogleDeta
 import IntelDetails from "./components/BrandsProducts/IntelProducts/IntelDetails.jsx";
 import SamsungDetails from "./components/BrandsProducts/SamsungProducts/SamsungDetails.jsx";
 import SonyDetails from "./components/BrandsProducts/SonyProducts/SonyDetails.jsx";
+import AuthProvider from "./Providers/AuthProvider.jsx";
 
 const router = createBrowserRouter([
   {
@@ -189,6 +190,8 @@ const router = createBrowserRouter([
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>
 );
