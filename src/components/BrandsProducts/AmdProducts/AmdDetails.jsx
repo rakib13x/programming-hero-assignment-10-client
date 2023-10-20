@@ -70,9 +70,7 @@ const AmdDetails = () => {
         <div className="flex justify-center items-center lg:flex-row flex-col gap-8">
           {/* Description Div */}
           <div className="w-full sm:w-96 md:w-8/12 lg:w-6/12 flex lg:flex-row flex-col lg:gap-8 sm:gap-6 gap-4">
-            <div className="w-full lg:w-8/12 bg-gray-100 flex justify-center items-center">
-              <img src={amd.image} alt="Product Preview" />
-            </div>
+            <img src={amd.image} alt="Product Preview" className="w-full" />
           </div>
           <div className="w-full sm:w-96 md:w-8/12 lg:w-6/12 items-center">
             <p className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 font-normal text-base leading-4 text-gray-600">
@@ -84,7 +82,6 @@ const AmdDetails = () => {
             <div className="flex flex-row justify-between mt-5">
               <div className="flex flex-row space-x-3">
                 {renderRatingStars(parseInt(amd.rating))}
-                {/* Dynamic rating stars */}
               </div>
               <p className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 font-normal text-base leading-4 text-gray-700 hover:underline hover:text-gray-800 duration-100 cursor-pointer">
                 22 reviews

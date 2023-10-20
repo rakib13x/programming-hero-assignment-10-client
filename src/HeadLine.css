@@ -1,1 +1,20 @@
+.scroll-container {
+  
+  overflow: hidden;
+}
 
+.scroll-text {
+  animation: scroll-text 25s linear infinite;
+  transform-origin: top right;
+  display: inline-block;
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateX(1000%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+ 
+}
