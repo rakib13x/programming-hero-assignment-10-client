@@ -33,156 +33,283 @@ import IntelDetails from "./components/BrandsProducts/IntelProducts/IntelDetails
 import SamsungDetails from "./components/BrandsProducts/SamsungProducts/SamsungDetails.jsx";
 import SonyDetails from "./components/BrandsProducts/SonyProducts/SonyDetails.jsx";
 import AuthProvider from "./Providers/AuthProvider.jsx";
+import ErrorPage from "./components/Error/ErrorPage.jsx";
+import PrivateRoute from "./routes/PrivateRoute.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
         element: <Home />,
+        errorElement: <ErrorPage />,
       },
       {
         path: "/login",
         element: <LogIn />,
+        errorElement: <ErrorPage />,
       },
       {
         path: "/register",
         element: <Register />,
+        errorElement: <ErrorPage />,
       },
       {
         path: "/addproduct",
-        element: <AddProduct />,
+        element: (
+          <PrivateRoute>
+            <AddProduct />
+          </PrivateRoute>
+        ),
+        errorElement: <ErrorPage />,
       },
       {
         path: "/addamd",
+
         element: <AddAmd />,
+
+        errorElement: <ErrorPage />,
       },
       {
         path: "/amdproduct",
-        element: <Amd />,
+
+        element: (
+          <PrivateRoute>
+            <Amd />
+          </PrivateRoute>
+        ),
+        errorElement: <ErrorPage />,
         loader: () => fetch("http://localhost:3000/amd"),
       },
 
       {
         path: "/updateAmd/:id",
-        element: <UpdateAmd />,
+        element: (
+          <PrivateRoute>
+            <UpdateAmd />
+          </PrivateRoute>
+        ),
+        errorElement: <ErrorPage />,
         loader: ({ params }) => fetch(`http://localhost:3000/amd/${params.id}`),
       },
       {
         path: "/amd-product-details/:id",
         element: <AmdDetails />,
+        errorElement: <ErrorPage />,
         loader: ({ params }) => fetch(`http://localhost:3000/amd/${params.id}`),
       },
       {
         path: "/addapple",
         element: <AddApple />,
+        errorElement: <ErrorPage />,
       },
       {
         path: "/appleproduct",
-        element: <Apple />,
+        element: (
+          <PrivateRoute>
+            <Apple />
+          </PrivateRoute>
+        ),
+        errorElement: <ErrorPage />,
         loader: () => fetch("http://localhost:3000/apple"),
       },
       {
         path: "/updateApple/:id",
-        element: <UpdateApple />,
+        element: (
+          <PrivateRoute>
+            <UpdateApple />
+          </PrivateRoute>
+        ),
+        errorElement: <ErrorPage />,
         loader: ({ params }) =>
           fetch(`http://localhost:3000/apple/${params.id}`),
       },
       {
         path: "/apple-product-details/:id",
-        element: <AppleDetails />,
+        element: (
+          <PrivateRoute>
+            <AppleDetails />
+          </PrivateRoute>
+        ),
+        errorElement: <ErrorPage />,
         loader: ({ params }) =>
           fetch(`http://localhost:3000/apple/${params.id}`),
       },
       {
         path: "/addgoogle",
-        element: <AddGoogle />,
+        element: (
+          <PrivateRoute>
+            <AddGoogle />
+          </PrivateRoute>
+        ),
+        errorElement: <ErrorPage />,
       },
       {
         path: "/googleproduct",
-        element: <Google />,
+        element: (
+          <PrivateRoute>
+            <Google />
+          </PrivateRoute>
+        ),
+        errorElement: <ErrorPage />,
         loader: () => fetch("http://localhost:3000/google"),
       },
       {
         path: "/updateGoogle/:id",
-        element: <UpdateGoogle />,
+        element: (
+          <PrivateRoute>
+            <UpdateGoogle />
+          </PrivateRoute>
+        ),
+        errorElement: <ErrorPage />,
         loader: ({ params }) =>
           fetch(`http://localhost:3000/google/${params.id}`),
       },
       {
         path: "/google-product-details/:id",
-        element: <GoogleDetails />,
+        element: (
+          <PrivateRoute>
+            <GoogleDetails />
+          </PrivateRoute>
+        ),
+        errorElement: <ErrorPage />,
         loader: ({ params }) =>
           fetch(`http://localhost:3000/google/${params.id}`),
       },
       {
         path: "/addintel",
-        element: <AddIntel />,
+        element: (
+          <PrivateRoute>
+            <AddIntel />
+          </PrivateRoute>
+        ),
+        errorElement: <ErrorPage />,
       },
       {
         path: "/intelproduct",
-        element: <Intel />,
+        element: (
+          <PrivateRoute>
+            <Intel />
+          </PrivateRoute>
+        ),
+        errorElement: <ErrorPage />,
         loader: () => fetch("http://localhost:3000/intel"),
       },
       {
         path: "/updateIntel/:id",
-        element: <UpdateIntel />,
+        element: (
+          <PrivateRoute>
+            <UpdateIntel />
+          </PrivateRoute>
+        ),
+        errorElement: <ErrorPage />,
         loader: ({ params }) =>
           fetch(`http://localhost:3000/intel/${params.id}`),
       },
       {
         path: "/intel-product-details/:id",
-        element: <IntelDetails />,
+        element: (
+          <PrivateRoute>
+            <IntelDetails />
+          </PrivateRoute>
+        ),
+        errorElement: <ErrorPage />,
         loader: ({ params }) =>
           fetch(`http://localhost:3000/intel/${params.id}`),
       },
       {
         path: "/addsamsung",
-        element: <AddSamsung />,
+        element: (
+          <PrivateRoute>
+            <AddSamsung />
+          </PrivateRoute>
+        ),
+        errorElement: <ErrorPage />,
       },
       {
         path: "/samsungproduct",
-        element: <Samsung />,
+        element: (
+          <PrivateRoute>
+            <Samsung />
+          </PrivateRoute>
+        ),
+        errorElement: <ErrorPage />,
         loader: () => fetch("http://localhost:3000/samsung"),
       },
       {
         path: "/updateSamsung/:id",
-        element: <UpdateSamsung />,
+        element: (
+          <PrivateRoute>
+            <UpdateSamsung />
+          </PrivateRoute>
+        ),
+        errorElement: <ErrorPage />,
         loader: ({ params }) =>
           fetch(`http://localhost:3000/samsung/${params.id}`),
       },
       {
         path: "/samsung-product-details/:id",
-        element: <SamsungDetails />,
+        element: (
+          <PrivateRoute>
+            <SamsungDetails />
+          </PrivateRoute>
+        ),
+        errorElement: <ErrorPage />,
         loader: ({ params }) =>
           fetch(`http://localhost:3000/samsung/${params.id}`),
       },
       {
         path: "/addsony",
-        element: <AddSony />,
+        element: (
+          <PrivateRoute>
+            <AddSony />
+          </PrivateRoute>
+        ),
+        errorElement: <ErrorPage />,
       },
       {
         path: "/sonyproduct",
-        element: <Sony />,
+        element: (
+          <PrivateRoute>
+            <Sony />
+          </PrivateRoute>
+        ),
+        errorElement: <ErrorPage />,
         loader: () => fetch("http://localhost:3000/sony"),
       },
       {
         path: "/updateSony/:id",
-        element: <UpdateSony />,
+        element: (
+          <PrivateRoute>
+            <UpdateSony />
+          </PrivateRoute>
+        ),
+        errorElement: <ErrorPage />,
         loader: ({ params }) =>
           fetch(`http://localhost:3000/sony/${params.id}`),
       },
       {
         path: "/sony-product-details/:id",
-        element: <SonyDetails />,
+        element: (
+          <PrivateRoute>
+            <SonyDetails />
+          </PrivateRoute>
+        ),
+        errorElement: <ErrorPage />,
         loader: ({ params }) =>
           fetch(`http://localhost:3000/sony/${params.id}`),
       },
       {
         path: "mycart",
-        element: <MyCart />,
+        element: (
+          <PrivateRoute>
+            <MyCart />
+          </PrivateRoute>
+        ),
+        errorElement: <ErrorPage />,
         loader: () => fetch("http://localhost:3000/myCart"),
       },
     ],

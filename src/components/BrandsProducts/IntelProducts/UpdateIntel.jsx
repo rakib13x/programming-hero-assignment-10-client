@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import Productform from "../../ProductForm/Productform";
+import Footer from "../../Footer/Footer";
 
 const UpdateIntel = () => {
   const intel = useLoaderData();
@@ -64,15 +65,20 @@ const UpdateIntel = () => {
       });
   };
   return (
-    <div className="bg-[#F4F3F0] p-24">
-      <h2 className="text-6xl font-semibold text-green-700 text-center">
-        Update {name}
-      </h2>
-      <form onSubmit={handleUpdateIntel}>
-        {/**form name and quantity row */}
-        <Productform />
-      </form>
-    </div>
+    <>
+      <div className="bg-[#F4F3F0] p-24">
+        <h2 className="text-6xl font-semibold text-green-700 text-center">
+          Update {name}
+        </h2>
+        <form onSubmit={handleUpdateIntel}>
+          {/**form name and quantity row */}
+          <Productform />
+        </form>
+      </div>
+      <div>
+        <Footer />
+      </div>
+    </>
   );
 };
 

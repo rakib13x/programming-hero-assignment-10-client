@@ -23,14 +23,14 @@ const Home = () => {
       <Headline />
       <FeaturedProducts />
       <div className="pt-10">
-        <h1 className="text-black font-semibold text-2xl text-center">
+        <h1 className=" font-semibold text-4xl text-center">
           Featured Products
         </h1>
         <p className="font-semibold text-sm text-center pt-2">
           Check & Get Your Desired Product!
         </p>
       </div>
-      <div className="grid lg:grid-cols-3 grid-cols-1 gap-10 justify-center pl-24 md:gap-10 pt-20">
+      <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 justify-center pl-[120px] md:gap-10 pt-20">
         {brands.map((brand) => (
           <ProductNameCard
             key={brand}

@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import AmdHero from "../../BrandHero/AmdHero";
+import Footer from "../../Footer/Footer";
 
 const AmdProductCard = ({ amd, setAmds, amds }) => {
   const { _id, name, image, brand, type, price, description, rating } = amd;

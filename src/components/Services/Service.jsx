@@ -3,9 +3,6 @@ import ServiceDetails from "./ServiceDetails";
 
 const Service = () => {
   const [services, setServices] = useState([]);
-  const theme = localStorage.getItem("theme");
-  console.log("Theme:", theme);
-  const textClass = theme === "dark" ? "text-white" : "";
 
   useEffect(() => {
     fetch("/services.json")
@@ -19,7 +16,7 @@ const Service = () => {
       });
   }, []);
   return (
-    <div className={`gap-8 space-y-6 px-[120px] pt-20 pb-8 ${textClass}`}>
+    <div className={"gap-8 space-y-6 px-[120px] pt-20 pb-8 "}>
       {services.map((service) => (
         <ServiceDetails key={service.id} service={service} />
       ))}

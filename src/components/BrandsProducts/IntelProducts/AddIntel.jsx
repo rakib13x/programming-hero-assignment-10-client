@@ -1,6 +1,7 @@
 import React from "react";
 import Productform from "../../ProductForm/Productform";
 import Swal from "sweetalert2";
+import Footer from "../../Footer/Footer";
 
 const AddIntel = () => {
   const handleAddIntel = (event) => {
@@ -49,14 +50,19 @@ const AddIntel = () => {
       });
   };
   return (
-    <div className="bg-green-200 p-24">
-      <h2 className="text-6xl font-semibold text-green-700 text-center">
-        Add a Intel Product
-      </h2>
-      <form onSubmit={handleAddIntel}>
-        <Productform />
-      </form>
-    </div>
+    <>
+      <div className="bg-green-200 p-24">
+        <h2 className="text-6xl font-semibold text-green-700 text-center">
+          Add a Intel Product
+        </h2>
+        <form onSubmit={handleAddIntel}>
+          <Productform />
+        </form>
+      </div>
+      <div>
+        <Footer />
+      </div>
+    </>
   );
 };
 

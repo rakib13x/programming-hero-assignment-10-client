@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import Productform from "../../ProductForm/Productform";
+import Footer from "../../Footer/Footer";
 
 const UpdateSony = () => {
   const sony = useLoaderData();
@@ -65,15 +66,20 @@ const UpdateSony = () => {
       });
   };
   return (
-    <div className="bg-green-200 p-24">
-      <h2 className="text-6xl font-semibold text-green-700 text-center">
-        Update Sony:{name}
-      </h2>
-      <form onSubmit={handleUpdateSony}>
-        {/**form name and quantity row */}
-        <Productform />
-      </form>
-    </div>
+    <>
+      <div className="bg-green-200 p-24">
+        <h2 className="text-6xl font-semibold text-green-700 text-center">
+          Update Sony:{name}
+        </h2>
+        <form onSubmit={handleUpdateSony}>
+          {/**form name and quantity row */}
+          <Productform />
+        </form>
+      </div>
+      <div>
+        <Footer />
+      </div>
+    </>
   );
 };
 

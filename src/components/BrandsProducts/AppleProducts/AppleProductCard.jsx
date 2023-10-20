@@ -1,9 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import Footer from "../../Footer/Footer";
 
 const AppleProductCard = ({ apple, setApples, apples }) => {
-  const {_id, name, image, brand, type, price, description, rating } =
-    apple;
+  const { _id, name, image, brand, type, price, description, rating } = apple;
   const navigate = useNavigate();
   const handleAppleDetails = () => {
     navigate(`/apple-product-details/${apple._id}`);
@@ -37,38 +37,40 @@ const AppleProductCard = ({ apple, setApples, apples }) => {
     });
   };
   return (
-    <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 justify-center ">
-      <div className="card w-96 bg-base-100 shadow-xl">
-        <figure>
-          <img src={image} alt="Product" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">
-            {name}
-            <div className="badge badge-secondary">NEW</div>
-          </h2>
-          <p>{description}</p>
+    <>
+      <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 justify-center ">
+        <div className="card w-96 bg-base-100 shadow-xl">
+          <figure>
+            <img src={image} alt="Product" />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">
+              {name}
+              <div className="badge badge-secondary">NEW</div>
+            </h2>
+            <p>{description}</p>
 
-          <div className="card-actions justify-center">
-            <button
-              className="btn btn-active bg-green-600 text-white"
-              onClick={handleAppleDetails}
-            >
-              Details
-            </button>
-            <Link to={`/updateApple/${_id}`}>
-              <button className="btn bg-green-600 text-white">Edit</button>
-            </Link>
-            <button
-              className="btn bg-green-600 text-white"
-              onClick={() => handleDelete(_id)}
-            >
-              Delete
-            </button>
+            <div className="card-actions justify-center">
+              <button
+                className="btn btn-active bg-green-600 text-white"
+                onClick={handleAppleDetails}
+              >
+                Details
+              </button>
+              <Link to={`/updateApple/${_id}`}>
+                <button className="btn bg-green-600 text-white">Edit</button>
+              </Link>
+              <button
+                className="btn bg-green-600 text-white"
+                onClick={() => handleDelete(_id)}
+              >
+                Delete
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

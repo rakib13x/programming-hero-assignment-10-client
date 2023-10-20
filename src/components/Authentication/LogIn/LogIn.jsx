@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { BiLogInCircle } from "react-icons/bi";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../../Providers/AuthProvider.jsx";
-
+import Swal from "sweetalert2";
 const LogIn = () => {
   const { signInUser, signInWithGoogle } = useContext(AuthContext);
   console.log(signInUser);
@@ -17,7 +17,8 @@ const LogIn = () => {
     signInUser(email, password)
       .then((result) => {
         console.log(result.user);
-        console.log("Login successful!");
+        console.log();
+        Swal.fire("Login successful!");
         navigate("/");
       })
       .catch((error) => {
@@ -28,6 +29,7 @@ const LogIn = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result.user);
+        Swal.fire("Login successful!");
         navigate("/");
       })
       .catch((error) => {

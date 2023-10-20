@@ -1,6 +1,7 @@
 import React from "react";
 import Productform from "../../ProductForm/Productform";
 import Swal from "sweetalert2";
+import Footer from "../../Footer/Footer";
 
 const AddSony = () => {
   const handleAddSony = (event) => {
@@ -38,7 +39,7 @@ const AddSony = () => {
         if (data.insertedId) {
           Swal.fire({
             title: "Success",
-            text: "User Added Successfully",
+            text: "Product Added Successfully",
             icon: "success",
             confirmButtonText: "Cool",
           });
@@ -49,14 +50,19 @@ const AddSony = () => {
       });
   };
   return (
-    <div className="bg-green-200 p-24">
-      <h2 className="text-6xl font-semibold text-green-700 text-center">
-        Add a Sony Product
-      </h2>
-      <form onSubmit={handleAddSony}>
-        <Productform />
-      </form>
-    </div>
+    <>
+      <div className="bg-green-200 p-24">
+        <h2 className="text-6xl font-semibold text-green-700 text-center">
+          Add a Sony Product
+        </h2>
+        <form onSubmit={handleAddSony}>
+          <Productform />
+        </form>
+      </div>
+      <div>
+        <Footer />
+      </div>
+    </>
   );
 };
 

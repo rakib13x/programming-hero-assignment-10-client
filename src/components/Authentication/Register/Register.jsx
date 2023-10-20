@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { BiLogOutCircle } from "react-icons/bi";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 const Register = () => {
   const { createUser, signInWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -11,6 +12,7 @@ const Register = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result.user);
+        Swal.fire("You have Successfully Logged In");
         navigate("/");
       })
       .catch((error) => {
@@ -28,30 +30,54 @@ const Register = () => {
 
     if (name) {
       if (password.length < 6) {
-        console.error("Password should be at least 6 characters long");
+        console.error();
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Password should be at least 6 characters long",
+        });
       } else if (!/[A-Z]/.test(password)) {
-        console.error("Password should at least contain Capital letter");
+        console.error();
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Password should at least contain Capital letter",
+        });
       } else if (!/[!@#$%^&*]/.test(password)) {
-        console.error("Password should contain at least one special character");
+        console.error();
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Password should contain at least one special character",
+        });
       } else {
         try {
           await createUser(email, password, name, photoURL);
           window.location.reload();
         } catch (error) {
           console.error("Error registering user:", error);
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "U have Provided wrong information or U are already registered",
+          });
         }
       }
     } else {
-      console.error("Name cannot be null or empty");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Name Cannot be empty",
+      });
     }
   };
   navigate("/");
 
   return (
     <>
-      <div className="hero min-h-screen bg-gray-400 rounded-xl">
+      <div className="hero min-h-screen rounded-xl">
         <div className="hero-content flex-col">
-          <h1 className="text-5xl font-bold text-black">Sign Up Here</h1>
+          <h1 className="text-5xl font-bold ">Sign Up Here</h1>
 
           <div className="text-center lg:text-left"></div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-gray-100">

@@ -1,6 +1,7 @@
 import React from "react";
 import Productform from "../../ProductForm/Productform";
 import Swal from "sweetalert2";
+import Footer from "../../Footer/Footer";
 
 const AddGoogle = () => {
   const handleAddGoogle = (event) => {
@@ -48,14 +49,19 @@ const AddGoogle = () => {
       });
   };
   return (
-    <div className="bg-green-200 p-24">
-      <h2 className="text-6xl font-semibold text-green-700 text-center">
-        Add a Google Product
-      </h2>
-      <form onSubmit={handleAddGoogle}>
-        <Productform />
-      </form>
-    </div>
+    <>
+      <div className="bg-green-200 p-24">
+        <h2 className="text-6xl font-semibold text-green-700 text-center">
+          Add a Google Product
+        </h2>
+        <form onSubmit={handleAddGoogle}>
+          <Productform />
+        </form>
+      </div>
+      <div>
+        <Footer />
+      </div>
+    </>
   );
 };
 

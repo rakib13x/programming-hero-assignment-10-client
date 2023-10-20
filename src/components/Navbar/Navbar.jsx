@@ -7,6 +7,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import sun from "../../assets/sun.svg";
 import moon from "../../assets/moon.svg";
 import "./Navbar.css";
+import Swal from "sweetalert2";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
 
@@ -31,6 +32,8 @@ const Navbar = () => {
     document.querySelector("html").setAttribute("data-theme", localTheme);
   }, [theme]);
 
+  const textClass = theme === "dark" ? "text-white" : "";
+
   useEffect(() => {
     if (user) {
       const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -52,7 +55,8 @@ const Navbar = () => {
   const handleLogOut = () => {
     logOut()
       .then(() => {
-        console.log("user Logged Out");
+        console.log();
+        Swal.fire("user Logged Out");
       })
       .catch((error) => console.log(error));
   };
@@ -80,7 +84,10 @@ const Navbar = () => {
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
-            <label tabIndex={0} className="btn  text-black text-xl lg:hidden">
+            <label
+              tabIndex={0}
+              className={`btn  text-xl lg:hidden ${textClass}`}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -104,13 +111,15 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to="/">
-            <a className="btn btn-ghost normal-case text-3xl text-black font-bold">
+            <a
+              className={`btn btn-ghost normal-case text-3xl font-bold ${textClass}`}
+            >
               EShop
             </a>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-4">{navBar}</ul>
+          <ul className={`menu menu-horizontal px-4 ${textClass}`}>{navBar}</ul>
         </div>
       </div>
       <div className="flex-none gap-2">
@@ -118,8 +127,8 @@ const Navbar = () => {
           {user ? (
             <>
               <span className="flex flex-col pr-6">
-                <p className="text-sm text-black">{user.email}</p>{" "}
-                <p className="font-bold text-black">{userName}</p>{" "}
+                <p className={` text-sm ${textClass}`}>{user.email}</p>{" "}
+                <p className={` font-bold ${textClass}`}>{userName}</p>{" "}
               </span>
             </>
           ) : (
