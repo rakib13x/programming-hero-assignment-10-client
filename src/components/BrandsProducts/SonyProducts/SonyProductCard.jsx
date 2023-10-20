@@ -52,7 +52,7 @@ const SonyProductCard = ({ sony, setSonys, sonys }) => {
               {name}
               <div className="badge badge-secondary">NEW</div>
             </h2>
-            <p>{description}</p>
+            <p>{description.substring(0, 80)} read more...</p>
 
             <div className="card-actions justify-center">
               <button

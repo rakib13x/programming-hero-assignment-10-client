@@ -54,7 +54,10 @@ const SamsungProductCard = ({ samsung, setSamsungs, samsungs }) => {
               {name}
               <div className="badge badge-secondary">NEW</div>
             </h2>
-            <p>{description}</p>
+            <p>
+              {description.substring(0, 80)}{" "}
+              <span className="text-red-500 font-bold">read more...</span>
+            </p>
 
             <div className="card-actions justify-center">
               <button
