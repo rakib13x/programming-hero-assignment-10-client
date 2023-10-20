@@ -4,12 +4,38 @@ import { BiLogOutCircle } from "react-icons/bi";
 import auth from "../../firebase/firebase.config";
 import { onAuthStateChanged } from "firebase/auth";
 import { AuthContext } from "../../Providers/AuthProvider";
-
+import sun from "../../assets/sun.svg";
+import moon from "../../assets/moon.svg";
+import "./Navbar.css";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
 
   const [isLoading, setIsLoading] = useState(true);
   const [userName, setUserName] = useState("");
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "winter"
+  );
+
+  const handleToggle = (e) => {
+    if (e.target.checked) {
+      setTheme("dark");
+    } else {
+      setTheme("winter");
+    }
+  };
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+
+    if (localTheme === "dark") {
+      document.body.classList.add("text-white");
+    } else {
+      document.body.classList.remove("text-white");
+    }
+  }, [theme]);
 
   useEffect(() => {
     if (user) {
@@ -56,8 +82,8 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-gray-300 px-[120px]">
-      <div className="navbar bg-base-300">
+    <div className="navbar bg-base-100 px-[120px]">
+      <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn  text-black text-xl lg:hidden">
@@ -85,7 +111,7 @@ const Navbar = () => {
           </div>
           <Link to="/">
             <a className="btn btn-ghost normal-case text-3xl text-black font-bold">
-              E-Shop
+              EShop
             </a>
           </Link>
         </div>
@@ -122,7 +148,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="mt-3 z-[100] p-2 shadow menu menu-sm dropdown-content bg-gray-900 rounded-box w-52 text-white text-2xl"
+              className="mt-3 z-[100] p-2 shadow menu menu-sm dropdown-content rounded-box w-52 text-white text-2xl"
             >
               <li>
                 <a onClick={handleLogOut}>Logout</a>
@@ -130,6 +156,23 @@ const Navbar = () => {
             </ul>
           </div>
         )}
+      </div>
+      <div className="flex-none">
+        {/* Toggle button here */}
+        <button className="btn btn-square btn-ghost">
+          <label className="swap swap-rotate w-12 h-12">
+            <input
+              type="checkbox"
+              onChange={handleToggle}
+              // show toggle image based on localstorage theme
+              checked={theme === "winter" ? false : true}
+            />
+            {/* light theme sun image */}
+            <img src={sun} alt="light" className="w-8 h-8 swap-on" />
+            {/* dark theme moon image */}
+            <img src={moon} alt="dark" className="w-8 h-8 swap-off" />
+          </label>
+        </button>
       </div>
     </div>
   );
